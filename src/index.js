@@ -1,35 +1,41 @@
+import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
 const App = function () {
+  const previousButtonHandler=function(){
+    alert('previous button clicked')
+  }
+  const nextButtonHandler=function(){
+    alert('next button clicked')
+  }
   return (
     <div>
-      <h1>Hello react world welcome on board</h1>
-      <p>hello Abuja</p>
+      <button className="close">&times;</button>(
+      <div className="steps">
+        <div className="numbers">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p className="message">Step 1: learn react</p>
+        <div className="buttons">
+          <button onClick={previousButtonHandler} style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+            Previous
+          </button>
+          <button onClick={nextButtonHandler} style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+            Next
+          </button>
+        </div>
+      </div>
+      )
     </div>
   );
 };
-const MyFirstComponent = function () {
-  return <h1>This is my first component created</h1>;
-};
-const NavigationBar = function () {
-  return (
-    <nav>
-      <Navlink />
-    </nav>
-  );
-};
-const Navlink = function () {
-  return <a>Home</a>;
-};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
-    <MyFirstComponent />
-    <App />
-    <App />
-    <App />
-    <NavigationBar />
   </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function
